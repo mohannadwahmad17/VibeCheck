@@ -3,7 +3,7 @@ import { Button, HStack, Image, KeyboardAvoidingView, Link, View, VStack } from 
 import { Keyboard, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import LabeledInputField from "../components/LabeledInputField";
 
-const Login = () => {
+const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [displayEmailError, setEmailError] = useState(false);
@@ -17,6 +17,10 @@ const Login = () => {
     function handlePasswordInput(passwordInput) {
         setPasswordError(false);
         setPassword(passwordInput);
+    }
+
+    function handleSignupLinkClick() {
+        navigation.navigate('Signup');
     }
 
     return (
@@ -44,7 +48,7 @@ const Login = () => {
                 </View>
                 <HStack>
                     <Text>Not a member?</Text>
-                    <Link>Sign Up!</Link>
+                    <Link onPress={}>Sign Up!</Link>
                 </HStack>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>

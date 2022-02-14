@@ -2,7 +2,7 @@ import { Button, VStack } from "native-base";
 import React, { useState } from "react";
 import LabeledInputField from "../components/LabeledInputField";
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [lastName, setLastName] = useState("");
