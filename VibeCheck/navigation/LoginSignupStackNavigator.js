@@ -6,12 +6,12 @@ import SignUp from "../pages/Signup";
 
 const Stack = createNativeStackNavigator();
 
-const LoginSignupStackNavigator = () => {
+const LoginSignupStackNavigator = (props) => {
+
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Login" component={Login}/>
+            <Stack.Screen name="Login" component={<Login updateLoggedStatus={props.updateLoggedStatus}/>}/>
             <Stack.Screen name="Signup" component={SignUp}/>
-            <Stack.Screen name="Home" component={Home}/>
         </Stack.Navigator>
     );
 }
