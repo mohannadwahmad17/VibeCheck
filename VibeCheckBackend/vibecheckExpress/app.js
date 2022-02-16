@@ -35,11 +35,13 @@ io.on("connection", (socket) => {
       return;
     }
 
+    //Greet user
     socket.emit("message", {
       user: "admin",
       text: `${user.name}, welcome!`
     });
 
+    //Broadcast to all users in the chat room that the new user has joined
     socket.broadcast.to(user.room).emit("message", {
       user:"admin",
       text: `${user.name} has just entered the room`
@@ -62,6 +64,20 @@ io.on("connection", (socket) => {
       text: `${user.name} has just left the chat`
     });
   });
+
+  socket.on("send-message", (message) => {
+    const user = getUser(socket.id);
+
+    io.to(user.room).emit("message", {
+      user: user.name,
+      text: message
+    });
+
+    io.to(user.room).emit("room-data", {
+      room: user.room,
+      users: getAllUsers(user.room)
+    });
+  })
 });
 
 app.get("/", (req, res) => {
