@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, HStack, Image, KeyboardAvoidingView, Link, View, VStack } from "native-base";
+import { Button, HStack, Image, KeyboardAvoidingView, Link, Text, View, VStack } from "native-base";
 import { Keyboard, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import LabeledInputField from "../components/LabeledInputField";
 
@@ -43,13 +43,14 @@ const Login = ({ navigation }) => {
                         displayErrorMessage={displayPasswordError}
                         errorMessageContent="The password you entered is incorrect"
                     />
-                <View>
-                    <Button>Sign in</Button>>
-                </View>
-                <HStack>
-                    <Text>Not a member?</Text>
-                    <Link onPress={}>Sign Up!</Link>
-                </HStack>
+                    <View>
+                        <Button>Sign in</Button>>
+                    </View>
+                    <HStack>
+                        <Text>Not a member?</Text>
+                        <Link onPress={handleSignupLinkClick}>Sign Up!</Link>
+                    </HStack>
+                </VStack>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
     );
