@@ -2,7 +2,7 @@ import { Button, View } from "native-base";
 import React from "react";
 
 const Home = () => {
-    return(
+    return (
         <View>
             <Button>
             </Button>

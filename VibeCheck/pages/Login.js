@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, HStack, Image, KeyboardAvoidingView, Link, Text, View, VStack } from "native-base";
 import { Keyboard, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import LabeledInputField from "../components/LabeledInputField";
+import loginPageStyles from "../styles/loginStyles";
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");
@@ -25,7 +26,7 @@ const Login = ({ navigation }) => {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-            <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
+            <KeyboardAvoidingView style={loginPageStyles.content} behavior={Platform.OS === "ios" ? "padding" : "height"}>
                 <VStack>
                     <LabeledInputField
                         label="Email"
@@ -44,7 +45,7 @@ const Login = ({ navigation }) => {
                         errorMessageContent="The password you entered is incorrect"
                     />
                     <View>
-                        <Button>Sign in</Button>>
+                        <Button>Sign in</Button>
                     </View>
                     <HStack>
                         <Text>Not a member?</Text>

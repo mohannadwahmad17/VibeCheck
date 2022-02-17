@@ -13,9 +13,9 @@ export default function App() {
     <NativeBaseProvider>
       <NavigationContainer>
         {
-          loggedIn ? 
-          <Home/> :
-          <LoginSignupStackNavigator updateLoggedStatus={setLoggedIn}/>
+          loggedIn ?
+            <Home />:
+            <LoginSignupStackNavigator updateLoggedStatus={setLoggedIn} />
         }
       </NavigationContainer>
     </NativeBaseProvider>

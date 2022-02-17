@@ -10,8 +10,8 @@ const LoginSignupStackNavigator = (props) => {
 
     return (
         <Stack.Navigator initialRouteName="Login">
-            <Stack.Screen name="Login" component={Login}/>
-            <Stack.Screen name="Signup" component={SignUp}/>
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Signup" component={SignUp} />
         </Stack.Navigator>
     );
 }
